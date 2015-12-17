@@ -1,0 +1,28 @@
+{
+  "name": "css-reset-and-normalize",
+  "version": "0.1.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simbo/css-reset-and-normalize.git"
+  },
+  "author": "Simon Lepel <simbo@simbo.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simbo/css-reset-and-normalize/issues"
+  },
+  "homepage": "https://github.com/simbo/css-reset-and-normalize#readme",
+  "devDependencies": {
+    "csswring": "^4.1.1",
+    "gulp": "^3.9.0",
+    "gulp-ext-replace": "^0.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-postcss": "^6.0.1",
+    "gulp-stylus": "^2.1.1"
+  }
+}
