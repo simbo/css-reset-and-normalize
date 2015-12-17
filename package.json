@@ -1,7 +1,7 @@
 {
   "name": "css-reset-and-normalize",
   "version": "0.1.0",
-  "description": "",
+  "description": "A cleaned up combination of Eric Meyer's Reset CSS 2.0 and Nicolas Gallagher's normalize.css.",
   "main": "gulpfile.js",
   "scripts": {
     "build": "gulp",
