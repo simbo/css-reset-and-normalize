@@ -5,9 +5,11 @@ css-reset-and-normalize
   > and Nicolas Gallagher's [*normalize.css*](http://necolas.github.io/normalize.css/)
   > with optional flavor.
 
+# WORK IN PROGRESS
+
 ## Why?
 
-I personaly prefer normalizing over resetting by default.
+I personally prefer normalizing over resetting in general.
 But when it comes to producing custom styles for detailed elements, i find 
 myself overwriting and resetting most rules, that were previously normalized.
 That's why I ended up with a combination of both: reset and normalize.
