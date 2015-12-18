@@ -1,19 +1,22 @@
 css-reset-and-normalize
 =======================
 
-  > A cleaned up combination of Eric Meyer's [*Reset CSS 2.0*](http://meyerweb.com/eric/tools/css/reset/),
-  > Nicolas Gallagher's [*normalize.css*](http://necolas.github.io/normalize.css/).
+  > A cleaned up combination of Eric Meyer's [*Reset CSS 2.0*](http://meyerweb.com/eric/tools/css/reset/)
+  > and Nicolas Gallagher's [*normalize.css*](http://necolas.github.io/normalize.css/)
+  > with optional flavor.
 
 ## Why?
 
 I personaly prefer normalizing over resetting by default.
-But when it comes to producing custom styles for detailed elements, i find myself overwriting and resetting most rules, that were previously normalized.
+But when it comes to producing custom styles for detailed elements, i find 
+myself overwriting and resetting most rules, that were previously normalized.
 That's why I ended up with a combination of both: reset and normalize.
 
 
 ## Differences from Eric Meyer's Reset 2.0
 
-  - Removed `hgroup` from all selectors as it is not included in the HTML5 specification anymore
+  - Removed `hgroup` from all selectors as it is not included in the HTML5 
+    specification anymore
   - Added `section` and `summary` to HTML5 display-role reset selector
 
 
