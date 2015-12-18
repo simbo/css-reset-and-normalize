@@ -4,7 +4,7 @@
   "description": "A cleaned up combination of Eric Meyer's Reset CSS 2.0 and Nicolas Gallagher's normalize.css with optional flavor.",
   "main": "gulpfile.js",
   "scripts": {
-    "build": "gulp",
+    "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
@@ -19,10 +19,12 @@
   "homepage": "https://github.com/simbo/css-reset-and-normalize#readme",
   "devDependencies": {
     "csswring": "^4.1.1",
+    "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-ext-replace": "^0.2.0",
     "gulp-plumber": "^1.0.1",
     "gulp-postcss": "^6.0.1",
-    "gulp-stylus": "^2.1.1"
+    "gulp-stylus": "^2.1.1",
+    "run-sequence": "^1.1.5"
   }
 }
