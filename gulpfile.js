@@ -19,11 +19,7 @@ gulp.task('build:css', function() {
   return gulp
     .src(path.join(paths.stylus, '*.styl'))
     .pipe(plumber())
-    .pipe(stylus({
-      paths: [
-        path.join(paths.stylus, 'imports')
-      ]
-    }))
+    .pipe(stylus())
     .pipe(gulp.dest(paths.css));
 });
 
