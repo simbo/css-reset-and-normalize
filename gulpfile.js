@@ -43,4 +43,8 @@ gulp.task('build:css-minified', ['build:css'], function() {
     .pipe(gulp.dest(paths.css));
 });
 
+gulp.task('watch', function(done) {
+  gulp.watch(path.join(paths.stylus, '**/*.styl'), ['build:css-minified']);
+});
+
 gulp.task('default', ['build:css-minified']);
