@@ -17,7 +17,8 @@ That's why I ended up with a combination of both: reset and normalize.
 
   - Removed `hgroup` from all selectors as it is not included in the HTML5 
     specification anymore
-  - Added `section` and `summary` to HTML5 display-role reset selector
+  - Added `main` to basic reset
+  - Added `main` and `summary` to HTML5 display-role reset selector
 
 
 ## Differences from Nicolas Gallagher's normalize.css
