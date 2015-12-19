@@ -13,3 +13,45 @@
 *::before,
 *::after
   box-sizing: inherit
+
+/**
+ * iOS "clickable elements" fix for role="button"
+ *
+ * Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+ * for traditionally non-focusable elements with role="button"
+ * see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+ */
+
+[role="button"]
+  cursor: pointer
+
+/**
+ * Avoid 300ms click delay on touch devices that support the `touch-action` CSS property.
+ *
+ * In particular, unlike most other browsers, IE11+Edge on Windows 10 on touch devices and IE Mobile 10-11
+ * DON'T remove the click delay when `<meta name="viewport" content="width=device-width">` is present.
+ * However, they DO support removing the click delay via `touch-action: manipulation`.
+ * See:
+ * - http://v4-alpha.getbootstrap.com/content/reboot/#click-delay-optimization-for-touch
+ * - http://caniuse.com/#feat=css-touch-action
+ * - http://patrickhlauke.github.io/touch/tests/results/#suppressing-300ms-delay
+ */
+
+a,
+area,
+button,
+[role="button"],
+input,
+label,
+select,
+summary,
+textarea
+  touch-action: manipulation
+
+/**
+ * Always hide an element with the `hidden` HTML attribute (from PureCSS).
+ */
+
+[hidden] {
+  display: none !important;
+}
