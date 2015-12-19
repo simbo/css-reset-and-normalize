@@ -2,7 +2,8 @@
 
 var path = require('path');
 
-var csswring = require('csswring'),
+var autoprefixer = require('autoprefixer'),
+    csswring = require('csswring'),
     extReplace = require('gulp-ext-replace'),
     del = require('del'),
     gulp = require('gulp'),
@@ -17,6 +18,13 @@ var paths = {
       css: path.join(__dirname, 'css')
     },
     options = {
+      autoprefixer: {
+        browsers: [
+          '> 0.01%',
+          'last 3 versions'
+        ],
+        remove: false
+      },
       csswring: {
         preserveHacks: true
       },
@@ -30,6 +38,9 @@ gulp.task('build:css', ['clean:css'], function() {
     .src(path.join(paths.stylus, '*.styl'))
     .pipe(plumber())
     .pipe(stylus(options.stylus))
+    .pipe(postcss([
+      autoprefixer(options.autoprefixer)
+    ]))
     .pipe(gulp.dest(paths.css))
     .pipe(postcss([
       csswring(options.csswring)

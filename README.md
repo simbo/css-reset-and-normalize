@@ -34,6 +34,7 @@ That's why I ended up with a combination of both: reset and normalize.
       * `fieldset`: `border`, `margin`, `padding`
       * `table`: `border-collapse`, `border-spacing`
       * `td, th`: `padding`
+  - Removed vendor prefixes for `box-sizing` (autoprefixer handles that)
 
 
 ## License
