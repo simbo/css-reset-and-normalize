@@ -11,6 +11,7 @@ css-reset-and-normalize
 
 <!-- MarkdownTOC -->
 
+- [Setup](#setup)
 - [Usage](#usage)
 - [Differences from Reset 2.0](#differences-from-reset-20)
 - [Differences from normalize.css 3.2.2](#differences-from-normalizecss-322)
@@ -21,6 +22,14 @@ css-reset-and-normalize
 <!-- /MarkdownTOC -->
 
 ---
+
+## Setup
+
+Packages can be installed via [npm](https://www.npmjs.com/) or [bower](http://bower.io/):
+
+  - `npm install css-reset-and-normalize`
+  - `bower install css-reset-and-normalize`
+
 
 ## Usage
 
