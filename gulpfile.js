@@ -7,6 +7,7 @@ var autoprefixer = require('autoprefixer'),
     extReplace = require('gulp-ext-replace'),
     del = require('del'),
     gulp = require('gulp'),
+    perfectionist = require('perfectionist'),
     postcss = require('gulp-postcss'),
     plumber = require('gulp-plumber'),
     runSequence = require('run-sequence'),
@@ -28,6 +29,12 @@ var paths = {
       csswring: {
         preserveHacks: true
       },
+      perfectionist: {
+        cascade: true,
+        format: 'expanded',
+        indentSize: 2,
+        sourcemap: true
+      },
       stylus: {
         compress: false
       }
@@ -39,7 +46,8 @@ gulp.task('build:css', ['clean:css'], function() {
     .pipe(plumber())
     .pipe(stylus(options.stylus))
     .pipe(postcss([
-      autoprefixer(options.autoprefixer)
+      autoprefixer(options.autoprefixer),
+      perfectionist(options.perfectionist)
     ]))
     .pipe(gulp.dest(paths.css))
     .pipe(postcss([
