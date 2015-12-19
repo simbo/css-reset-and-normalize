@@ -20,7 +20,7 @@
   },
   "scripts": {
     "build": "gulp build",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "npm run build"
   },
   "main": "stylus/flavored-reset-and-normalize.styl",
   "files": [
