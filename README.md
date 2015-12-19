@@ -70,6 +70,7 @@ Or `@require` the stylus versions:
   - Add rules for responsive `@viewport`
   - Set `box-sizing:border-box` for everything
   - Add transparent tap highlight for iOS
+  - help cursor for `abbr`
 
 
 ## Why?
