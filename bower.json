@@ -1,6 +1,6 @@
 {
   "name": "css-reset-and-normalize",
-  "description": "A cleaned up combination of Eric Meyer's Reset CSS 2.0 and Nicolas Gallagher's normalize.css with optional flavor.",
+  "description": "A cleaned up combination of Eric Meyer's Reset CSS 2.0 and Nicolas Gallagher's normalize.css with some optional flavor.",
   "authors": [
     "Simon Lepel <simbo@simbo.de> (http://simbo.de/"
   ],
