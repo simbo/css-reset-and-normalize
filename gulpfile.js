@@ -12,21 +12,27 @@ var csswring = require('csswring'),
     stylus = require('gulp-stylus');
 
 var paths = {
-  cwd: __dirname,
-  stylus: path.join(__dirname, 'stylus'),
-  css: path.join(__dirname, 'css')
-};
+      cwd: __dirname,
+      stylus: path.join(__dirname, 'stylus'),
+      css: path.join(__dirname, 'css')
+    },
+    options = {
+      csswring: {
+        preserveHacks: true
+      },
+      stylus: {
+        compress: false
+      }
+    };
 
 gulp.task('build:css', ['clean:css'], function() {
   return gulp
     .src(path.join(paths.stylus, '*.styl'))
     .pipe(plumber())
-    .pipe(stylus())
+    .pipe(stylus(options.stylus))
     .pipe(gulp.dest(paths.css))
     .pipe(postcss([
-      csswring({
-        preserveHacks: true
-      })
+      csswring(options.csswring)
     ]))
     .pipe(extReplace('.min.css'))
     .pipe(gulp.dest(paths.css));
