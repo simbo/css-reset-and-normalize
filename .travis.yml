@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- 0.5.3
+deploy:
+  provider: npm
+  email: simbo@simbo.de
+  api_key: "${NPM_API_KEY}"
+  on:
+    tags: true
+    repo: simbo/css-reset-and-normalize
+env:
+  global:
+    secure: HjfN08A72jV+QvartLkPsHdHxmvTO0uFc4wWIXj4ce08PGRx7qxQmMr900lBIY3SGE04Eqo9LQQopmh4JHCpvCjwRKYSbCN0ET7UUFOZSZ8kAW7htlyqY8kc0k4+RlrO67bSEPZ8KvF1uFBc+ScFxxoarjyXk21OZYpRm4akD9LBLCHupZBDaqwx9VQL7BNPCUjxQo8zjoNwPikJaTVDeQHVeJrL1cHXAcsiU/QGn97kvE5o1BgaFWqM9Mp7YjA6omLwZ1zXdlaIwm+caGWThVUIwTOhteXQ8NWOdmQa6jvOB47AvwkBCDXkCYdHSRoGdWyxSyn6aOSc9gRKz//7OcaaqRpXxBGCo7PB9Db+womnPGAFxDN9vlKdpPb28UgHCRemlM1VE1GD2NRpBxAoTbtuEiZEKxNHfmgCIIZLXSbsNyybt+qtjIxiryF2j5yWF5epd0Q8GHki+ODhD3UXXk8BniqfjkGpQ2f/DPqcDun/4tAz3Zq4fuUoMcpnRe65SrLrsKjAP7RzVoHrdS5LXzn8DqZAYpLPcOswTce0YEOjY+x0l2PMKf9DzIZsfIGHMwcfVfnowWsJp8OwjsLb6Cczx+Y/c9aR0oDE6WlF1c6bqj4SJcRR0hC0TcK8Wcf0HqH9uqWM1nzfFLmXfelqY1+PU22ztksm6QKBOE3f8GQ=
