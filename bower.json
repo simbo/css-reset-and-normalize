@@ -1,0 +1,26 @@
+{
+  "name": "css-reset-and-normalize",
+  "description": "A cleaned up combination of Eric Meyer's Reset CSS 2.0 and Nicolas Gallagher's normalize.css with optional flavor.",
+  "authors": [
+    "Simon Lepel <simbo@simbo.de> (http://simbo.de/"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "reset",
+    "normalize",
+    "stylus"
+  ],
+  "homepage": "https://github.com/simbo/css-reset-and-normalize",
+  "main": [
+    "css/flavored-reset-and-normalize.css",
+    "css/reset-and-normalize.css"
+  ],
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "gulpfile.js",
+    "package.json"
+  ]
+}
