@@ -11,6 +11,7 @@ css-reset-and-normalize
 
 <!-- MarkdownTOC -->
 
+- [Usage](#usage)
 - [Differences from Reset 2.0](#differences-from-reset-20)
 - [Differences from normalize.css 3.2.2](#differences-from-normalizecss-322)
 - [Optional additional flavor](#optional-additional-flavor)
@@ -20,6 +21,27 @@ css-reset-and-normalize
 <!-- /MarkdownTOC -->
 
 ---
+
+## Usage
+
+Sources are available in [stylus](http://stylus-lang.com/) or generated css 
+including minified versions.
+
+`<link…>` or `@import` the minified or unminified css version:
+
+  - `css/reset-and-normalize.min.css`
+  - `css/reset-and-normalize.css`
+
+Or with some [additional flavor](#optional-additional-flavor):
+
+  - `css/flavored-reset-and-normalize.min.css`
+  - `css/flavored-reset-and-normalize.css`
+
+Or `@require` the stylus versions:
+
+  - `stylus/reset-and-normalize.styl`
+  - `stylus/flavored-reset-and-normalize.styl`
+
 
 ## Differences from Reset 2.0
 
@@ -47,6 +69,7 @@ css-reset-and-normalize
 
   - Add rules for responsive `@viewport`
   - Set `box-sizing:border-box` for everything
+  - Add transparent tap highlight for iOS
 
 
 ## Why?
