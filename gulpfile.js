@@ -11,6 +11,7 @@ var autoprefixer = require('autoprefixer'),
     postcss = require('gulp-postcss'),
     plumber = require('gulp-plumber'),
     runSequence = require('run-sequence'),
+    sourcemaps = require('gulp-sourcemaps'),
     stylus = require('gulp-stylus');
 
 var paths = {
@@ -35,6 +36,10 @@ var paths = {
         indentSize: 2,
         sourcemap: true
       },
+      sourcemaps: {
+        includeContent: true,
+        sourceRoot: '.'
+      },
       stylus: {
         compress: false
       }
@@ -44,6 +49,7 @@ gulp.task('build:css', ['clean:css'], function() {
   return gulp
     .src(path.join(paths.stylus, '*.styl'))
     .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(stylus(options.stylus))
     .pipe(postcss([
       autoprefixer(options.autoprefixer),
@@ -54,6 +60,7 @@ gulp.task('build:css', ['clean:css'], function() {
       csswring(options.csswring)
     ]))
     .pipe(extReplace('.min.css'))
+    .pipe(sourcemaps.write('.', options.sourcemaps))
     .pipe(gulp.dest(paths.css));
 });
 
