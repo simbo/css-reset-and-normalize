@@ -74,6 +74,7 @@ Or `@require` the stylus versions:
       * `table`: `border-collapse`, `border-spacing`
       * `td, th`: `padding`
   - Removed vendor prefixes for `box-sizing` (autoprefixer handles that)
+  - Set `font-style: italic` for `i, em`, resetted by basic reset
 
 
 ## Optional additional flavor

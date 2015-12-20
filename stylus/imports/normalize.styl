@@ -91,7 +91,6 @@ abbr[title]
   if (with-flavor)
     cursor: help
 
-
 /**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
@@ -101,10 +100,12 @@ strong
   font-weight: bold
 
 /**
- * Address styling not present in Safari and Chrome.
+ * 1. Address styling not present in Safari and Chrome.
+ * 2. Set previously resetted italic font-style
  */
 
-dfn
+dfn, // 1
+i, em // 2
   font-style: italic
 
 /**
