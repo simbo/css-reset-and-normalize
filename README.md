@@ -8,7 +8,6 @@ css-reset-and-normalize
   > with some optional flavor. 
 
 [![npm Package Version](https://img.shields.io/npm/v/css-reset-and-normalize.svg?style=flat-square)](https://www.npmjs.com/package/css-reset-and-normalize)
-![bower Package Version](https://img.shields.io/bower/v/css-reset-and-normalize.svg?style=flat-square)
 [![MIT License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://simbo.mit-license.org)
 
 <!-- MarkdownTOC -->
