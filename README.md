@@ -81,6 +81,7 @@ Or `@require` the stylus versions:
   - Add rules for responsive `@viewport`
   - Set `box-sizing:border-box` for everything
   - Set help cursor for `abbr`
+  - Remove default style for `button`
   - Add transparent tap highlight for iOS
   - iOS "clickable elements" fix for `role="button"`
   - Avoid 300ms click delay on touch devices that support the `touch-action` CSS property
