@@ -1,14 +1,17 @@
 {
   "name": "css-reset-and-normalize",
-  "version": "0.3.0",
-  "description": "A cleaned up combination of Eric Meyer's Reset CSS 2.0 and Nicolas Gallagher's normalize.css with some optional flavor.",
+  "version": "1.0.0",
+  "description": "A combination of css reset and normalize (available in CSS, SCSS, Stylus and LESS)",
   "author": "Simon Lepel <simbo@simbo.de> (http://simbo.de/)",
   "license": "MIT",
   "keywords": [
-    "css",
     "reset",
     "normalize",
-    "stylus"
+    "reboot",
+    "css",
+    "scss",
+    "stylus",
+    "less"
   ],
   "homepage": "https://github.com/simbo/css-reset-and-normalize#readme",
   "repository": {
@@ -19,27 +22,26 @@
     "url": "https://github.com/simbo/css-reset-and-normalize/issues"
   },
   "scripts": {
-    "build": "gulp build",
-    "test": "npm run build"
+    "build:css": "mkdir -p css && node-sass --output-style expanded ./scss/reset-and-normalize.scss > ./css/reset-and-normalize.css",
+    "build:min": "cleancss -O 0 -o ./css/reset-and-normalize.min.css ./css/reset-and-normalize.css",
+    "build:stylus": "mkdir -p stylus && stylus --css ./css/reset-and-normalize.css ./stylus/reset-and-normalize.styl",
+    "build:less": "mkdir -p less && cp ./scss/reset-and-normalize.scss ./less/reset-and-normalize.less",
+    "build": "yarn run clean && yarn run build:css && yarn run build:min && yarn run build:stylus && yarn run build:less",
+    "clean": "rm -rf css stylus less",
+    "test": "echo \"No tests specified. Skipping...\" && exit 0"
   },
-  "main": "stylus/flavored-reset-and-normalize.styl",
+  "main": "css/reset-and-normalize.min.css",
   "files": [
     "css/",
+    "less/",
+    "scss",
     "stylus/",
     "LICENSE",
     "README.md"
   ],
   "devDependencies": {
-    "autoprefixer": "^6.2.0",
-    "csswring": "^4.1.1",
-    "del": "^2.2.0",
-    "gulp": "^3.9.0",
-    "gulp-ext-replace": "^0.2.0",
-    "gulp-plumber": "^1.0.1",
-    "gulp-postcss": "^6.0.1",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-stylus": "^2.1.1",
-    "perfectionist": "^2.1.2",
-    "run-sequence": "^1.1.5"
+    "clean-css-cli": "^4.1.11",
+    "node-sass": "^4.9.0",
+    "stylus": "^0.54.5"
   }
 }

@@ -1,102 +1,104 @@
 css-reset-and-normalize
 =======================
 
-  > A cleaned up combination of Eric Meyer's
-  > [*Reset CSS 2.0*](http://meyerweb.com/eric/tools/css/reset/)
-  > and Nicolas Gallagher's 
-  > [*normalize.css*](http://necolas.github.io/normalize.css/)
-  > with some optional flavor. 
+  > A combination of css reset and normalize (available in CSS, SCSS, Stylus and
+  > LESS).
 
-[![npm Package Version](https://img.shields.io/npm/v/css-reset-and-normalize.svg?style=flat-square)](https://www.npmjs.com/package/css-reset-and-normalize)
-[![MIT License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://simbo.mit-license.org)
+[![npm package version](https://img.shields.io/npm/v/css-reset-and-normalize.svg?style=flat-square)](https://www.npmjs.com/package/css-reset-and-normalize)
+[![Travis CI build status](https://travis-ci.org/simbo/css-reset-and-normalize.svg?branch=master)](https://travis-ci.org/simbo/css-reset-and-normalize/builds)
 
-<!-- MarkdownTOC -->
 
-- [Setup](#setup)
+<!-- TOC -->
+
+- [About](#about)
+  - [Rules and Reasons](#rules-and-reasons)
+- [Installation](#installation)
 - [Usage](#usage)
-- [Differences from Reset 2.0](#differences-from-reset-20)
-- [Differences from normalize.css 3.2.2](#differences-from-normalizecss-322)
-- [Optional additional flavor](#optional-additional-flavor)
-- [Why?](#why)
 - [License](#license)
 
-<!-- /MarkdownTOC -->
+<!-- /TOC -->
 
 ---
 
-## Setup
 
-Packages can be installed via [npm](https://www.npmjs.com/) or [bower](http://bower.io/):
+## About
 
-  - `npm install css-reset-and-normalize`
-  - `bower install css-reset-and-normalize`
+This combination of css reset and normalize is based on
+
+  - [CSS Reset 2.0](https://meyerweb.com/eric/tools/css/reset/)
+    (public domain) by Eric Meyer
+
+  - [normalize.css 8.0.0](https://github.com/necolas/normalize.css)
+    (MIT) by Nicolas Gallagher and Jonathan Neal
+
+  - [Bootstrap 4.1.1 Reboot](https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss)
+    (MIT) by Twitter Inc.
+
+
+### Rules and Reasons
+
+Take a look at the [source code](./scss/reset-and-normalize.scss), it has
+comments.
+
+BTW: There's a good article about [Reboot, Resets and Reasoning](https://css-tricks.com/reboot-resets-reasoning/)
+by Chris Coyier.
+
+
+## Installation
+
+`css-reset-and-normalize` is a npm package. You can install it…
+
+``` sh
+# …using npm
+npm install css-reset-and-normalize
+# …or yarn
+yarn add css-reset-and-normalize
+```
+
+You can also download or import the latest generated CSS directly:
+
+  - Unminified CSS:  
+    [https://simbo.github.io/css-reset-and-normalize/reset-and-normalize.css](https://simbo.github.io/css-reset-and-normalize/reset-and-normalize.css)
+
+  - Minified CSS:  
+    [https://simbo.github.io/css-reset-and-normalize/reset-and-normalize.min.css](https://simbo.github.io/css-reset-and-normalize/reset-and-normalize.min.css)
 
 
 ## Usage
 
-Sources are available in [stylus](http://stylus-lang.com/) or generated css 
-including minified versions.
+There are multiple ways:
 
-`<link…>` or `@import` the minified or unminified css version:
+  - HTML `<link>`
 
-  - `css/reset-and-normalize.min.css`
-  - `css/reset-and-normalize.css`
+    ``` html
+    <link rel="stylesheet" href="path/to/reset-and-normalize.min.css">
+    ```
 
-Or with some [additional flavor](#optional-additional-flavor):
+  - CSS `@import`
 
-  - `css/flavored-reset-and-normalize.min.css`
-  - `css/flavored-reset-and-normalize.css`
+    ``` css
+    @import "path/to/reset-and-normalize.min.css"
+    ```
 
-Or `@require` the stylus versions:
+  - SCSS `@import`
 
-  - `stylus/reset-and-normalize.styl`
-  - `stylus/flavored-reset-and-normalize.styl`
+    ``` scss
+    @import 'path/to/node_modules/css-reset-and-normalize/scss/reset-and-normalize'
+    ```
 
+  - Stylus `@require`
 
-## Differences from Reset 2.0
+    ``` stylus
+    @require 'path/to/node_modules/css-reset-and-normalize/stylus/reset-and-normalize'
+    ```
 
-  - Removed `hgroup` from all selectors as it is not included in the HTML5 
-    specification anymore
-  - Added `main` to basic reset
-  - Added `main` and `summary` to HTML5 display-role reset selector
+  - LESS `@import`
 
-
-## Differences from normalize.css 3.2.2
-
-  - Removed everything that is already covered or overwritten by Reset:
-      * HTML5 display-role reset
-      * `h1`: `font-size`, `margin`
-      * `sub, sup`: `vertical-align`
-      * `figure`: `margin`
-      * `code, kbd, pre, samp`: `font-size`
-      * `fieldset`: `border`, `margin`, `padding`
-      * `table`: `border-collapse`, `border-spacing`
-      * `td, th`: `padding`
-  - Removed vendor prefixes for `box-sizing` (autoprefixer handles that)
-  - Set `font-style: italic` for `i, em`, resetted by basic reset
-
-
-## Optional additional flavor
-
-  - Add rules for responsive `@viewport`
-  - Set `box-sizing:border-box` for everything
-  - Set help cursor for `abbr`
-  - Remove default style for `button`
-  - Add transparent tap highlight for iOS
-  - iOS "clickable elements" fix for `role="button"`
-  - Avoid 300ms click delay on touch devices that support the `touch-action` CSS property
-  - Override the extra rounded corners on search inputs in iOS
-
-
-## Why?
-
-I personally prefer normalizing over resetting in general.
-But when it comes to producing detailed custom styles for all elements, i find 
-myself overwriting and resetting most rules, that were previously normalized.
-That's why I ended up with a combination of both: reset and normalize – with 
-some optional flavor…
+    ``` less
+    @import 'path/to/node_modules/css-reset-and-normalize/less/reset-and-normalize'
+    ```
 
 
 ## License
 
-[MIT &copy; Simon Lepel 2015](http://simbo.mit-license.org/)
+[MIT &copy; Simon Lepel](http://simbo.mit-license.org/)

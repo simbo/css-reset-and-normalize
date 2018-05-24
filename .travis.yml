@@ -1,13 +1,27 @@
 language: node_js
 node_js:
-- 4.1.2
+- '8.11'
+env:
+  global:
+  - secure: kpNAyRdIwHskyTyk6wJ4R43e4h4KchQeplkIVb0u0S2ZCp82gffMoz+PpQVphsVC4lZt5QF1S1xzQanF1+Y43euykWuk2EHs2OfZ00gM2D5rgHvZXfQNXdMGIR3dKK5dk3YL79GheDnXunVE6xOcfVSWhdCIhapQ0vhR6hzptol391Ld4QpWs20H+sRdu6QH0NupffUs/LKfmkPeyrnRyM2ZROkhFMwZQJ0+Kh9zd4fLU3Uh2tEon7WTrOGAYfmIxOP14r3f6qCLDauhnEvD1J+tqV7aGxm8f11ehXp6fESmpaEfss+TVPTY32oYhArtGZyT77Zf06doSAyWRkypgidgJG8j8lCUOY/vS9R+Kbw9h2FF5qZEACpxppsPJfJZWhKitCGqMIDII21o8bENfKIY3XftY8fBbpqsRYHfgDafKgA8EQzCf/BXd+pyfPpS/psn9AItkNSuXmg9fy987yr4BSCJVG0xrwCIYoYP69UoaDzE4ndh0VqNMSNnzXNt5rtNrbi1psr6ZkITMUQ2NkFaoCf2FYaxLsDF+ktFptdDpuLW78MBBhnqsAOIpMMQXQJO1QblCvrC47LwSqg4/hFwgjEjMtiJpLK1YrATHHKeZElOTRnjSRTFtxMBi5+wGIhqPpq3AHTbtcaP2NWiCnuhau7Whe27UPNmCnOdX4I=
+  - secure: oqIMeXyr/FxVy0LFerxpk7hIQS+k0V/3hcGqC9UpzSiGZHorPPZSFmIhPiWqU1oqxGTLRtIHU5UTtsZeoTanH17GvbQxj9qvITSekTDSla0CFx3/KEI9mPy33a6mOpGno4C/rCVQIgyyb7MeWSKRCbmIGR9K5VhZoyZ07ifeIm5gs1o3FFxxL/lNqWnr4Hw6yNLmYoIdAWw0DZJ2Ii/RsERvLAtTyUMwXAgqUJQYqBgpqKxVWwdUCj61IM0OXgLNJ5iDLSwTe5HuPMHRIvXaeCgnCWVuPhc0PmAU8m+NS1IwBimrZm7hILdxSd/wC5BiyH50SXCND4NdFp1RYOLj0s6IhiPNoz9LFtMJDJoSMdko7tcbyshauUTm8vrJ+GT1xxWBpKQ7ka2Z26RtZ88z3fRkNpx2XC3Lb+fEDC/+8hF10C18J8W45A0fPxvDog1E6FiJdO/ZT+dhgFS7+60B431GYLsEiLrMlxXEHpz3mgKxwafYGhXxWPrpkveLSm2a3rKWkADqZOnbDLTTLMNk4vGcIiD25drg47uwwsf1k07wFiEGcaJ0f16H2RsiWiNy1Jg/aCrb5WY5xvSHB6l1evMB+yXkS5OBaRjbjcIr5IzbUOnAhctVGDLWogWGr90qBTbAGahzm7MXDsgShPB8c3yglde2Pi0z1W0CwSrEIWk=
+script:
+- yarn run build
 deploy:
-  provider: npm
+- provider: npm
   email: simbo@simbo.de
   api_key: "${NPM_API_KEY}"
   on:
     tags: true
     repo: simbo/css-reset-and-normalize
-env:
-  global:
-    secure: HjfN08A72jV+QvartLkPsHdHxmvTO0uFc4wWIXj4ce08PGRx7qxQmMr900lBIY3SGE04Eqo9LQQopmh4JHCpvCjwRKYSbCN0ET7UUFOZSZ8kAW7htlyqY8kc0k4+RlrO67bSEPZ8KvF1uFBc+ScFxxoarjyXk21OZYpRm4akD9LBLCHupZBDaqwx9VQL7BNPCUjxQo8zjoNwPikJaTVDeQHVeJrL1cHXAcsiU/QGn97kvE5o1BgaFWqM9Mp7YjA6omLwZ1zXdlaIwm+caGWThVUIwTOhteXQ8NWOdmQa6jvOB47AvwkBCDXkCYdHSRoGdWyxSyn6aOSc9gRKz//7OcaaqRpXxBGCo7PB9Db+womnPGAFxDN9vlKdpPb28UgHCRemlM1VE1GD2NRpBxAoTbtuEiZEKxNHfmgCIIZLXSbsNyybt+qtjIxiryF2j5yWF5epd0Q8GHki+ODhD3UXXk8BniqfjkGpQ2f/DPqcDun/4tAz3Zq4fuUoMcpnRe65SrLrsKjAP7RzVoHrdS5LXzn8DqZAYpLPcOswTce0YEOjY+x0l2PMKf9DzIZsfIGHMwcfVfnowWsJp8OwjsLb6Cczx+Y/c9aR0oDE6WlF1c6bqj4SJcRR0hC0TcK8Wcf0HqH9uqWM1nzfFLmXfelqY1+PU22ztksm6QKBOE3f8GQ=
+    node: '8.11'
+  skip_cleanup: true
+- provider: pages
+  github-token: "$GITHUB_TOKEN"
+  on:
+    branch: master
+    node: '8.11'
+  local-dir: css
+  target-branch: gh-pages
+  skip-cleanup: true
+  keep-history: true
