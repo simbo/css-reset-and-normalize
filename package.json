@@ -1,6 +1,6 @@
 {
   "name": "css-reset-and-normalize",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A combination of css reset and normalize (available in CSS, SCSS, Stylus and LESS)",
   "author": "Simon Lepel <simbo@simbo.de> (http://simbo.de/)",
   "license": "MIT",

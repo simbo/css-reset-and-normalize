@@ -131,8 +131,8 @@ blockquote, q {
 }
 
 blockquote::before,
-q::after,
-blockquote::before,
+blockquote::after,
+q::before,
 q::after {
   content: '';
   content: none;
