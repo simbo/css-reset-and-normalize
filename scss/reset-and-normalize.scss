@@ -5,11 +5,11 @@
       (public domain)
  *    http://meyerweb.com/eric/tools/css/reset/
  *
- *  - normalize.css 8.0.0 by Nicolas Gallagher and Jonathan Neal
+ *  - normalize.css 8.0.1 by Nicolas Gallagher and Jonathan Neal
  *    (licensed under MIT)
  *    https://github.com/necolas/normalize.css
  *
- *  - Based on Bootstrap 4 Reboot
+ *  - Based on Reboot from Bootstrap 4.2.1
  *    (licensed under MIT)
  *    https://github.com/twbs/bootstrap
  */
@@ -103,6 +103,8 @@ html {
  * body rules
  * 1. reset line-height to 1
  * 2. set base font-family to sans-serif
+ * 3. Set an explicit initial text-align value so that we can later use the
+ *    `inherit` value on things like `<th>` elements.
  */
 
 body {
@@ -110,6 +112,8 @@ body {
   line-height: 1;
   /* 2 */
   font-family: sans-serif;
+  /* 3 */
+  text-align: left;
 }
 
 
@@ -138,6 +142,7 @@ q::after {
   content: none;
 }
 
+
 /**
  * Tables
  */
@@ -145,6 +150,21 @@ q::after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+caption {
+  caption-side: bottom;
+}
+
+
+/**
+ * Table Headers
+ * 1. Matches default `<td>` alignment by inheriting from the `<body>`, or the
+ *    closest parent with a set `text-align`.
+ */
+th {
+  /* 1 */
+  text-align: inherit;
 }
 
 
@@ -203,8 +223,10 @@ a {
 
 
 /**
- * 1. Remove the bottom border in Chrome 57-
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ * 3. Add explicit cursor to indicate changed behavior.
+ * 4. Prevent the text-decoration to be skipped.
  */
 
 abbr[title] {
@@ -213,6 +235,10 @@ abbr[title] {
   /* 2 */
   text-decoration: underline;
   text-decoration: underline dotted;
+  /* 3 */
+  cursor: help;
+  /* 4 */
+  text-decoration-skip-ink: none;
 }
 
 
@@ -242,9 +268,9 @@ small {
 
 sub,
 sup {
+  position: relative;
   font-size: 75%;
   line-height: 0;
-  position: relative;
 }
 
 sub {
@@ -336,7 +362,7 @@ button,
 [type="reset"],
 [type="submit"],
 /* 1 */
-html [type="button"] {
+[type="button"] {
   /* 2 */
   -webkit-appearance: button;
 }
@@ -391,7 +417,7 @@ select {
 
 
 /**
- * Remove the inner border and padding in Firefox.
+ * Remove inner border and padding from Firefox, but don't restore the outline like Normalize.
  */
 
 button::-moz-focus-inner,
@@ -404,14 +430,15 @@ button::-moz-focus-inner,
 
 
 /**
- * Restore the focus styles unset by the previous rule.
+ * 1. Add the correct box sizing in IE 10-
+ * 2. Remove the padding in IE 10-
  */
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
+input[type="radio"],
+input[type="checkbox"] {
+  /* 1 */
+  box-sizing: border-box;
+  /* 2 */
+  padding: 0;
 }
 
 
@@ -532,6 +559,14 @@ textarea {
   -webkit-appearance: button;
   /* 2 */
   font: inherit;
+}
+
+
+/**
+ * Correct element display for output
+ */
+output {
+  display: inline-block;
 }
 
 
