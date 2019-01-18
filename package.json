@@ -40,8 +40,8 @@
     "README.md"
   ],
   "devDependencies": {
-    "clean-css-cli": "^4.1.11",
-    "node-sass": "^4.9.0",
+    "clean-css-cli": "^4.2.1",
+    "node-sass": "^4.11.0",
     "stylus": "^0.54.5"
   }
 }
