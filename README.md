@@ -8,7 +8,7 @@ css-reset-and-normalize
 [![Travis CI build status](https://travis-ci.org/simbo/css-reset-and-normalize.svg?branch=master)](https://travis-ci.org/simbo/css-reset-and-normalize/builds)
 
 
-<!-- TOC -->
+<!-- TOC depthFrom:2 anchorMode:github.com -->
 
 - [About](#about)
   - [Rules and Reasons](#rules-and-reasons)
@@ -28,10 +28,10 @@ This combination of css reset and normalize is based on
   - [CSS Reset 2.0](https://meyerweb.com/eric/tools/css/reset/)
     (public domain) by Eric Meyer
 
-  - [normalize.css 8.0.0](https://github.com/necolas/normalize.css)
+  - [normalize.css 8.0.1](https://github.com/necolas/normalize.css)
     (MIT) by Nicolas Gallagher and Jonathan Neal
 
-  - [Bootstrap 4.1.1 Reboot](https://github.com/twbs/bootstrap/blob/v4-dev/scss/_reboot.scss)
+  - [Bootstrap 4.2.1 Reboot](https://github.com/twbs/bootstrap/blob/v4.2.1/scss/_reboot.scss)
     (MIT) by Twitter Inc.
 
 
