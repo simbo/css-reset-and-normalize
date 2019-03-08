@@ -14,6 +14,8 @@ css-reset-and-normalize
   - [Rules and Reasons](#rules-and-reasons)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Optional Addons:](#optional-addons)
+  - [Usage](#usage-1)
 - [License](#license)
 
 <!-- /TOC -->
@@ -31,7 +33,7 @@ This combination of css reset and normalize is based on
   - [normalize.css 8.0.1](https://github.com/necolas/normalize.css)
     (MIT) by Nicolas Gallagher and Jonathan Neal
 
-  - [Bootstrap 4.2.1 Reboot](https://github.com/twbs/bootstrap/blob/v4.2.1/scss/_reboot.scss)
+  - [Bootstrap 4.3.1 Reboot](https://github.com/twbs/bootstrap/blob/v4.2.1/scss/_reboot.scss)
     (MIT) by Twitter Inc.
 
 
@@ -40,7 +42,7 @@ This combination of css reset and normalize is based on
 Take a look at the [source code](./scss/reset-and-normalize.scss), it has
 comments.
 
-BTW: There's a good article about [Reboot, Resets and Reasoning](https://css-tricks.com/reboot-resets-reasoning/)
+BTW: Here's an article about [Reboot, Resets and Reasoning](https://css-tricks.com/reboot-resets-reasoning/)
 by Chris Coyier.
 
 
@@ -50,7 +52,7 @@ by Chris Coyier.
 
 ``` sh
 # …using npm
-npm install css-reset-and-normalize
+npm install --save css-reset-and-normalize
 # …or yarn
 yarn add css-reset-and-normalize
 ```
@@ -77,13 +79,13 @@ There are multiple ways:
   - CSS `@import`
 
     ``` css
-    @import "path/to/reset-and-normalize.min.css"
+    @import "path/to/reset-and-normalize.min.css";
     ```
 
   - SCSS `@import`
 
     ``` scss
-    @import 'path/to/node_modules/css-reset-and-normalize/scss/reset-and-normalize'
+    @import 'path/to/node_modules/css-reset-and-normalize/scss/reset-and-normalize';
     ```
 
   - Stylus `@require`
@@ -95,8 +97,29 @@ There are multiple ways:
   - LESS `@import`
 
     ``` less
-    @import 'path/to/node_modules/css-reset-and-normalize/less/reset-and-normalize'
+    @import 'path/to/node_modules/css-reset-and-normalize/less/reset-and-normalize';
     ```
+
+
+## Optional Addons:
+
+  - `button-reset`
+  - `link-reset`
+
+See source code.
+
+
+### Usage
+
+The optional addons can be included the same way like the base library.
+
+SCSS example:
+
+``` scss
+@import 'path/to/node_modules/css-reset-and-normalize/scss/reset-and-normalize';
+@import 'path/to/node_modules/css-reset-and-normalize/scss/button-reset';
+@import 'path/to/node_modules/css-reset-and-normalize/scss/link-reset';
+```
 
 
 ## License
