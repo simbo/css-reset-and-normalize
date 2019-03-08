@@ -405,9 +405,18 @@ select {
   text-transform: none;
 }
 
+/**
+ * Remove the inheritance of word-wrap in Safari.
+ * See https://github.com/twbs/bootstrap/issues/24990
+ */
+select {
+  word-wrap: normal;
+}
+
 
 /**
- * Remove inner border and padding from Firefox, but don't restore the outline like Normalize.
+ * Remove inner border and padding from Firefox, but don't restore the outline
+ * like Normalize.
  */
 
 button::-moz-focus-inner,
