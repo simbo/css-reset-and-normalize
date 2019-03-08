@@ -1,0 +1,11 @@
+/**
+ * adds resets for links that are not covered by reset-and-normalize base
+ */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:-moz-focusring, a:focus {
+  outline: none;
+}
