@@ -22,12 +22,12 @@
     "url": "https://github.com/simbo/css-reset-and-normalize/issues"
   },
   "scripts": {
-    "build:css": "mkdir -p css && node-sass --output-style expanded ./scss/reset-and-normalize.scss > ./css/reset-and-normalize.css",
-    "build:min": "cleancss -O 0 -o ./css/reset-and-normalize.min.css ./css/reset-and-normalize.css",
-    "build:stylus": "mkdir -p stylus && stylus --css ./css/reset-and-normalize.css ./stylus/reset-and-normalize.styl",
-    "build:less": "mkdir -p less && cp ./scss/reset-and-normalize.scss ./less/reset-and-normalize.less",
+    "build:css": "mkdir -p css && node-sass --output-style expanded --recursive --output ./css ./scss",
+    "build:min": "cleancss -O 0 -o ./css/reset-and-normalize.min.css ./css/reset-and-normalize.css && cleancss -O 0 -o ./css/button-reset.min.css ./css/button-reset.css && cleancss -O 0 -o ./css/link-reset.min.css ./css/link-reset.css",
+    "build:stylus": "mkdir -p stylus && stylus --css ./css/reset-and-normalize.css ./stylus/reset-and-normalize.styl && stylus --css ./css/button-reset.css ./stylus/button-reset.styl && stylus --css ./css/link-reset.css ./stylus/link-reset.styl",
+    "build:less": "mkdir -p less && cp ./scss/reset-and-normalize.scss ./less/reset-and-normalize.less && cp ./scss/button-reset.scss ./less/button-reset.less && cp ./scss/link-reset.scss ./less/link-reset.less",
     "build": "yarn run clean && yarn run build:css && yarn run build:min && yarn run build:stylus && yarn run build:less",
-    "clean": "rm -rf css stylus less",
+    "clean": "rimraf css stylus less",
     "test": "echo \"No tests specified. Skipping...\" && exit 0"
   },
   "main": "css/reset-and-normalize.min.css",
@@ -42,6 +42,7 @@
   "devDependencies": {
     "clean-css-cli": "^4.2.1",
     "node-sass": "^4.11.0",
+    "rimraf": "^2.6.3",
     "stylus": "^0.54.5"
   }
 }
