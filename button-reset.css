@@ -16,14 +16,18 @@ button {
   user-select: none;
 }
 
-[role="button"]:-moz-focusring, [role="button"]:focus,
+[role="button"]:-moz-focusring,
 input[type="button"]:-moz-focusring,
-input[type="button"]:focus,
 input[type="reset"]:-moz-focusring,
-input[type="reset"]:focus,
 input[type="submit"]:-moz-focusring,
+button:-moz-focusring {
+  outline: none;
+}
+
+[role="button"]:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
 input[type="submit"]:focus,
-button:-moz-focusring,
 button:focus {
   outline: none;
 }
