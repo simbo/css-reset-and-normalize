@@ -16,7 +16,10 @@ button {
   appearance: button;
   user-select: none;
 
-  &:-moz-focusring,
+  &:-moz-focusring {
+    outline: none;
+  }
+
   &:focus {
     outline: none;
   }
