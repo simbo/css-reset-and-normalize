@@ -33,7 +33,7 @@ This combination of css reset and normalize is based on
   - [normalize.css 8.0.1](https://github.com/necolas/normalize.css)
     (MIT) by Nicolas Gallagher and Jonathan Neal
 
-  - [Bootstrap 4.3.1 Reboot](https://github.com/twbs/bootstrap/blob/v4.2.1/scss/_reboot.scss)
+  - [Bootstrap 4.3.1 Reboot](https://github.com/twbs/bootstrap/blob/v4.3.1/scss/_reboot.scss)
     (MIT) by Twitter Inc.
 
 
