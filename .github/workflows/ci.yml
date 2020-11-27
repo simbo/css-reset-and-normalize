@@ -36,9 +36,9 @@ jobs:
 
       - name: 📋  Get commits since last release
         if: steps.version.outputs.changed == 'true'
-        run:
-          - echo "::set-output name=lastVersion::$(git describe --tags --abbrev=0 @^)"
-          - echo "::set-output name=log::$(git log $(git describe --tags --abbrev=0 @^)..@ --oneline | sed -e 's/^/- /')"
+        run: |
+          echo "::set-output name=lastVersion::$(git describe --tags --abbrev=0 @^)"
+          echo "::set-output name=log::$(git log $(git describe --tags --abbrev=0 @^)..@ --oneline | sed -e 's/^/- /')"
         id: gitlog
 
       - name: 🎁  Create tag and GitHub release
