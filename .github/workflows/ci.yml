@@ -61,11 +61,11 @@ jobs:
             Changes since ${{ steps.gitlog.outputs.lastVersion }}:
             ${{ steps.gitlog.outputs.log }}
 
-      # - name: 🚚  Publish to npm
-      #   if: steps.version.outputs.changed == 'true'
-      #   uses: JS-DevTools/npm-publish@v1
-      #   with:
-      #     token: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: 🚚  Publish to npm
+        if: steps.version.outputs.changed == 'true'
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: 📝  Copy README for gh-pages
         run: cp -f README.md css/README.md
