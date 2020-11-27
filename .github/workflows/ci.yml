@@ -11,10 +11,12 @@ jobs:
     steps:
       - name: 🛎  Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: 📄  Read .nvmrc
-        run: echo "::set-output name=version::$(cat .nvmrc)"
         id: nvm
+        run: echo "::set-output name=version::$(cat .nvmrc)"
 
       - name: 🛠  Setup node.js
         uses: actions/setup-node@v2.1.2
@@ -36,10 +38,10 @@ jobs:
 
       - name: 📋  Get commits since last release
         if: steps.version.outputs.changed == 'true'
+        id: gitlog
         run: |
           echo "::set-output name=lastVersion::$(git describe --tags --abbrev=0 @^)"
           echo "::set-output name=log::$(git log $(git describe --tags --abbrev=0 @^)..@ --oneline | sed -e 's/^/- /')"
-        id: gitlog
 
       - name: 🎁  Create tag and GitHub release
         if: steps.version.outputs.changed == 'true'
