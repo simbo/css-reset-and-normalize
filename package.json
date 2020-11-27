@@ -13,14 +13,9 @@
     "stylus",
     "less"
   ],
-  "homepage": "https://github.com/simbo/css-reset-and-normalize#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/simbo/css-reset-and-normalize.git"
-  },
-  "bugs": {
-    "url": "https://github.com/simbo/css-reset-and-normalize/issues"
-  },
+  "homepage": "https://simbo.codes/css-reset-and-normalize/",
+  "repository": "github:simbo/css-reset-and-normalize",
+  "bugs": "https://github.com/simbo/css-reset-and-normalize/issues",
   "scripts": {
     "build:css": "mkdirp css && node-sass --output-style expanded --recursive --output ./css ./scss",
     "build:min": "cleancss -O 0 -o ./css/reset-and-normalize.min.css ./css/reset-and-normalize.css && cleancss -O 0 -o ./css/button-reset.min.css ./css/button-reset.css && cleancss -O 0 -o ./css/link-reset.min.css ./css/link-reset.css",

@@ -4,8 +4,9 @@ css-reset-and-normalize
   > A combination of css reset and normalize (available in CSS, SCSS, Stylus and
   > LESS).
 
-[![npm package version](https://img.shields.io/npm/v/css-reset-and-normalize.svg?style=flat-square)](https://www.npmjs.com/package/css-reset-and-normalize)
-[![Travis CI build status](https://travis-ci.org/simbo/css-reset-and-normalize.svg?branch=master)](https://travis-ci.org/simbo/css-reset-and-normalize/builds)
+[![npm package version](https://img.shields.io/npm/v/css-reset-and-normalize)](https://www.npmjs.com/package/css-reset-and-normalize)
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/simbo/css-reset-and-normalize/CI/master)](https://github.com/simbo/css-reset-and-normalize/actions?query=workflow%3ACI)
+[![GitHub last commit](https://img.shields.io/github/last-commit/simbo/css-reset-and-normalize/master)](https://github.com/simbo/css-reset-and-normalize/commits/master)
 
 
 <!-- TOC depthFrom:2 anchorMode:github.com -->
@@ -60,10 +61,10 @@ yarn add css-reset-and-normalize
 You can also download or import the latest generated CSS directly:
 
   - CSS with comments:  
-    [https://simbo.github.io/css-reset-and-normalize/reset-and-normalize.css](https://simbo.github.io/css-reset-and-normalize/reset-and-normalize.css)
+    [https://simbo.codes/css-reset-and-normalize/reset-and-normalize.css](https://simbo.codes/css-reset-and-normalize/reset-and-normalize.css)
 
   - Minified CSS:  
-    [https://simbo.github.io/css-reset-and-normalize/reset-and-normalize.min.css](https://simbo.github.io/css-reset-and-normalize/reset-and-normalize.min.css)
+    [https://simbo.codes/css-reset-and-normalize/reset-and-normalize.min.css](https://simbo.codes/css-reset-and-normalize/reset-and-normalize.min.css)
 
 
 ## Usage
