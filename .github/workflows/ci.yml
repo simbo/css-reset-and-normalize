@@ -31,7 +31,6 @@ jobs:
         id: version
         uses: EndBug/version-check@v1
         with:
-          diff-search: true
           file-url: https://unpkg.com/css-reset-and-normalize@2.1.0/package.json
           static-checking: localIsNew
 
