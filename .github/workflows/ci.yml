@@ -27,16 +27,26 @@ jobs:
       - name: 👷‍♂️  Build
         run: yarn build
 
-      - name: 🚚  Tag version and publish to npm (if new version in package.json)
-        uses: pascalgn/npm-publish-action@1.3.5
-        with:
-          tag_name: "%s"
-          tag_message: "Version %s"
-          publish_command: "yarn"
-          publish_args: "--non-interactive"
+      - name: 👀  Check for version update
+        id: version
+        uses: EndBug/version-check@v1
+
+      - name: Log when version changed
+        if: steps.version.outputs.changed == 'true'
+        run: 'echo "Version change found in commit ${{ steps.version.outputs.commit }}! New version: ${{ steps.version.outputs.version }} (${{ steps.version.outputs.type }})"'
+
+      - name: ✅  Push new version tag
+        if: steps.version.outputs.changed == 'true'
+        uses: ChloePlanet/github-tag-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          CUSTOM_TAG: ${{ steps.version.outputs.version }}
+
+      # - name: 🚚  Publish to npm
+      #   if: steps.version.outputs.changed == 'true'
+      #   uses: JS-DevTools/npm-publish@v1
+      #   with:
+      #     token: ${{ secrets.NPM_TOKEN }}
 
       - name: 📝  Copy README for gh-pages
         run: cp -f README.md css/README.md
