@@ -30,23 +30,27 @@ jobs:
       - name: 👀  Check for version update
         id: version
         uses: EndBug/version-check@v1
+        with:
+          diff-search: true
+          file-url: https://unpkg.com/css-reset-and-normalize@2.1.0/package.json
+          static-checking: localIsNew
 
       - name: Log when version changed
         if: steps.version.outputs.changed == 'true'
         run: 'echo "Version change found in commit ${{ steps.version.outputs.commit }}! New version: ${{ steps.version.outputs.version }} (${{ steps.version.outputs.type }})"'
 
-      - name: ✅  Push new version tag
-        if: steps.version.outputs.changed == 'true'
-        uses: ChloePlanet/github-tag-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CUSTOM_TAG: ${{ steps.version.outputs.version }}
+      # - name: ✅  Push new version tag
+      #   if: steps.version.outputs.changed == 'true'
+      #   uses: ChloePlanet/github-tag-action@master
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     CUSTOM_TAG: ${{ steps.version.outputs.version }}
 
       # - name: 🚚  Publish to npm
       #   if: steps.version.outputs.changed == 'true'
       #   uses: JS-DevTools/npm-publish@v1
       #   with:
-      #     token: ${{ secrets.NPM_TOKEN }}
+      #     token: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: 📝  Copy README for gh-pages
         run: cp -f README.md css/README.md
