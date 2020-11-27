@@ -34,9 +34,14 @@ jobs:
           file-url: https://unpkg.com/css-reset-and-normalize@2.1.0/package.json
           static-checking: localIsNew
 
-      - name: Log when version changed
+      - name: 🎁  Create tag and GitHub release
         if: steps.version.outputs.changed == 'true'
-        run: 'echo "Version change found in commit ${{ steps.version.outputs.commit }}! New version: ${{ steps.version.outputs.version }} (${{ steps.version.outputs.type }})"'
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.version.outputs.version }}
+          release_name: Release ${{ steps.version.outputs.version }}
 
       # - name: ✅  Push new version tag
       #   if: steps.version.outputs.changed == 'true'
