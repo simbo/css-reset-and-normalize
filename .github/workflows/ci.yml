@@ -39,7 +39,7 @@ jobs:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
       - name: 📝  Copy README for gh-pages
-        run: copy -f README.md css/README.md
+        run: cp -f README.md css/README.md
 
       - name: 🚚  Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
