@@ -13,13 +13,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: 📄  Read .nvmrc
-        run: echo "::set-output name=NVMRC::$(cat .nvmrc)"
+        run: echo "::set-output name=version::$(cat .nvmrc)"
         id: nvm
 
       - name: 🛠  Setup node.js
         uses: actions/setup-node@v2.1.2
         with:
-          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+          node-version: '${{ steps.nvm.outputs.version }}'
 
       - name: 📦  Install
         run: yarn install
@@ -34,6 +34,13 @@ jobs:
           file-url: https://unpkg.com/css-reset-and-normalize@2.1.0/package.json
           static-checking: localIsNew
 
+      - name: 📋  Get commits since last release
+        if: steps.version.outputs.changed == 'true'
+        run:
+          - echo "::set-output name=lastVersion::$(git describe --tags --abbrev=0 @^)"
+          - echo "::set-output name=log::$(git log $(git describe --tags --abbrev=0 @^)..@ --oneline | sed -e 's/^/- /')"
+        id: gitlog
+
       - name: 🎁  Create tag and GitHub release
         if: steps.version.outputs.changed == 'true'
         uses: actions/create-release@v1
@@ -42,13 +49,9 @@ jobs:
         with:
           tag_name: ${{ steps.version.outputs.version }}
           release_name: Release ${{ steps.version.outputs.version }}
-
-      # - name: ✅  Push new version tag
-      #   if: steps.version.outputs.changed == 'true'
-      #   uses: ChloePlanet/github-tag-action@master
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #     CUSTOM_TAG: ${{ steps.version.outputs.version }}
+          body: |
+            Changes since ${{ steps.gitlog.outputs.lastVersion }}:
+            ${{ steps.gitlog.outputs.log }}
 
       # - name: 🚚  Publish to npm
       #   if: steps.version.outputs.changed == 'true'
