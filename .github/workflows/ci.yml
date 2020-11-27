@@ -42,7 +42,10 @@ jobs:
         run: |
           lastVersion=$(git describe --tags --abbrev=0 @^)
           log=$(git log $lastVersion..@ --oneline | sed -e 's/^/- /')
-          log="${${${${log//'%'/'%25'}//':'/'%3A'}//$'\n'/'%0A'}//$'\r'/'%0D'}"
+          log="${log//'%'/'%25'}"
+          log="${log//':'/'%3A'}"
+          log="${log//$'\n'/'%0A'}"
+          log="${log//$'\r'/'%0D'}"
           echo "::set-output name=lastVersion::$lastVersion"
           echo "::set-output name=log::$log"
 
