@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: 🛎  Checkout
+        uses: actions/checkout@v2
+
+      - name: 📄  Read .nvmrc
+        run: echo "::set-output name=NVMRC::$(cat .nvmrc)"
+        id: nvm
+
+      - name: 🛠  Setup node.js
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+
+      - name: 📦  Install
+        run: yarn install
+
+      - name: 👷‍♂️  Build
+        run: yarn build
+
+      - name: 🚚  Tag version and publish to npm (if new version in package.json)
+        uses: pascalgn/npm-publish-action@1.3.5
+        with:
+          tag_name: "%s"
+          tag_message: "Version %s"
+          publish_command: "yarn"
+          publish_args: "--non-interactive"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
+      - name: 📝  Copy README for gh-pages
+        run: copy -f README.md css/README.md
+
+      - name: 🚚  Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          BRANCH: gh-pages
+          FOLDER: css
+          CLEAN: true
