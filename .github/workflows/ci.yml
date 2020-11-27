@@ -40,8 +40,11 @@ jobs:
         if: steps.version.outputs.changed == 'true'
         id: gitlog
         run: |
-          echo "::set-output name=lastVersion::$(git describe --tags --abbrev=0 @^)"
-          echo "::set-output name=log::$(git log $(git describe --tags --abbrev=0 @^)..@ --oneline | sed -e 's/^/- /')"
+          lastVersion=$(git describe --tags --abbrev=0 @^)
+          log=$(git log $lastVersion..@ --oneline | sed -e 's/^/- /')
+          log="${${${${log//'%'/'%25'}//':'/'%3A'}//$'\n'/'%0A'}//$'\r'/'%0D'}"
+          echo "::set-output name=lastVersion::$lastVersion"
+          echo "::set-output name=log::$log"
 
       - name: 🎁  Create tag and GitHub release
         if: steps.version.outputs.changed == 'true'
