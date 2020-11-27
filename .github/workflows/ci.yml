@@ -33,7 +33,7 @@ jobs:
         id: version
         uses: EndBug/version-check@v1
         with:
-          file-url: https://unpkg.com/css-reset-and-normalize@2.1.0/package.json
+          file-url: https://unpkg.com/css-reset-and-normalize/package.json
           static-checking: localIsNew
 
       - name: 📋  Get commits since last release
