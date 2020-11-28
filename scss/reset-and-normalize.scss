@@ -9,7 +9,7 @@
  *    (licensed under MIT)
  *    https://github.com/necolas/normalize.css
  *
- *  - Based on Reboot from Bootstrap 4.2.1
+ *  - Based on Reboot from Bootstrap 4.5.3
  *    (licensed under MIT)
  *    https://github.com/twbs/bootstrap
  */
@@ -116,6 +116,22 @@ body {
   text-align: left;
 }
 
+/**
+ * Future-proof rule: in browsers that support :focus-visible, suppress the focus outline
+ * on elements that programmatically receive focus but wouldn't normally show a visible
+ * focus outline. In general, this would mean that the outline is only applied if the
+ * interaction that led to the element receiving programmatic focus was a keyboard interaction,
+ * or the browser has somehow determined that the user is primarily a keyboard user and/or
+ * wants focus outlines to always be presented.
+ *
+ * See https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible
+ * and https://developer.paciellogroup.com/blog/2018/03/focus-visible-and-backwards-compatibility/
+ */
+
+[tabindex="-1"]:focus:not(:focus-visible) {
+  outline: 0 !important;
+}
+
 
 /**
  * Lists
@@ -161,10 +177,14 @@ caption {
  * Table Headers
  * 1. Matches default `<td>` alignment by inheriting from the `<body>`, or the
  *    closest parent with a set `text-align`.
+ * 2. Fix alignment for Safari
  */
+
 th {
   /* 1 */
   text-align: inherit;
+  /* 2 */
+  text-align: -webkit-match-parent;
 }
 
 
@@ -231,7 +251,7 @@ a {
 
 abbr[title] {
   /* 1 */
-  border-bottom: none;
+  border-bottom: 0;
   /* 2 */
   text-decoration: underline;
   text-decoration: underline dotted;
@@ -241,6 +261,10 @@ abbr[title] {
   text-decoration-skip-ink: none;
 }
 
+address {
+  font-style: normal;
+  line-height: inherit;
+}
 
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
@@ -406,9 +430,20 @@ select {
 }
 
 /**
+ * Set the cursor for non-`<button>` buttons
+ * Details at https://github.com/twbs/bootstrap/pull/30562
+ */
+
+[role="button"] {
+  cursor: pointer;
+}
+
+
+/**
  * Remove the inheritance of word-wrap in Safari.
  * See https://github.com/twbs/bootstrap/issues/24990
  */
+
 select {
   word-wrap: normal;
 }
@@ -432,6 +467,7 @@ button::-moz-focus-inner,
  * 1. Add the correct box sizing in IE 10-
  * 2. Remove the padding in IE 10-
  */
+
 input[type="radio"],
 input[type="checkbox"] {
   /* 1 */
@@ -493,11 +529,16 @@ progress {
 
 
 /**
- * Remove the default vertical scrollbar in IE 10+.
+ * 1. Remove the default vertical scrollbar in IE 10+.
+ * 2. Textareas should really only resize vertically so they don't break their
+ *    (horizontal) containers.
  */
 
 textarea {
+  /* 1 */
   overflow: auto;
+  /* 2 */
+  resize: vertical;
 }
 
 
@@ -564,6 +605,7 @@ textarea {
 /**
  * Correct element display for output
  */
+
 output {
   display: inline-block;
 }
@@ -576,6 +618,12 @@ output {
 template {
   display: none;
 }
+
+
+/**
+ * Always hide an element with the `hidden` HTML attribute (from PureCSS).
+ * Needed for proper display in IE 10-.
+ */
 
 [hidden] {
   display: none;
