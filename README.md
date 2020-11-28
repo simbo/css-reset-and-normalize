@@ -62,10 +62,10 @@ yarn add css-reset-and-normalize
 You can also download or import the latest generated CSS directly:
 
   - CSS with comments:  
-    [https://simbo.codes/css-reset-and-normalize/reset-and-normalize.css](https://simbo.codes/css-reset-and-normalize/reset-and-normalize.css)
+    [https://unpkg.com/css-reset-and-normalize/css/reset-and-normalize.css](https://unpkg.com/css-reset-and-normalize/css/reset-and-normalize.css)
 
   - Minified CSS:  
-    [https://simbo.codes/css-reset-and-normalize/reset-and-normalize.min.css](https://simbo.codes/css-reset-and-normalize/reset-and-normalize.min.css)
+    [https://unpkg.com/css-reset-and-normalize/css/reset-and-normalize.min.css](https://unpkg.com/css-reset-and-normalize/css/reset-and-normalize.min.css)
 
 
 ## Usage
