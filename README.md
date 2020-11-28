@@ -5,6 +5,7 @@ css-reset-and-normalize
   > LESS).
 
 [![npm package version](https://img.shields.io/npm/v/css-reset-and-normalize)](https://www.npmjs.com/package/css-reset-and-normalize)
+[![npm](https://img.shields.io/npm/dw/css-reset-and-normalize?color=gold)](https://www.npmjs.com/package/css-reset-and-normalize)
 [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/simbo/css-reset-and-normalize/CI/master)](https://github.com/simbo/css-reset-and-normalize/actions?query=workflow%3ACI)
 [![GitHub last commit](https://img.shields.io/github/last-commit/simbo/css-reset-and-normalize/master)](https://github.com/simbo/css-reset-and-normalize/commits/master)
 
