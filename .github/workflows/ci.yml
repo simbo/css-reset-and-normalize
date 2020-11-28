@@ -36,20 +36,12 @@ jobs:
           file-url: https://unpkg.com/css-reset-and-normalize/package.json
           static-checking: localIsNew
 
-      - name: 📋  Get commits since last release
+      - name: 📋  Get Commits since last Release
         if: steps.version.outputs.changed == 'true'
-        id: gitlog
-        run: |
-          lastVersion=$(git describe --tags --abbrev=0 @^)
-          log=$(git log $lastVersion..@ --oneline | sed -e 's/^/- /')
-          log="${log//'%'/'%25'}"
-          log="${log//':'/'%3A'}"
-          log="${log//$'\n'/'%0A'}"
-          log="${log//$'\r'/'%0D'}"
-          echo "::set-output name=lastVersion::$lastVersion"
-          echo "::set-output name=log::$log"
+        use: simbo/changes-since-last-release-action@v1
+        id: changes
 
-      - name: 🎁  Create tag and GitHub release
+      - name: 🎁  Create tag and GitHub Release
         if: steps.version.outputs.changed == 'true'
         uses: actions/create-release@v1
         env:
@@ -58,8 +50,8 @@ jobs:
           tag_name: ${{ steps.version.outputs.version }}
           release_name: Release ${{ steps.version.outputs.version }}
           body: |
-            Changes since ${{ steps.gitlog.outputs.lastVersion }}:
-            ${{ steps.gitlog.outputs.log }}
+            Changes since ${{ steps.changes.outputs.last-tag }}:
+            ${{ steps.changes.outputs.log }}
 
       - name: 🚚  Publish to npm
         if: steps.version.outputs.changed == 'true'
