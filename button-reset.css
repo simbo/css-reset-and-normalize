@@ -17,6 +17,14 @@ button {
   user-select: none;
 }
 
+[role="button"] :not(:disabled),
+input[type="button"] :not(:disabled),
+input[type="reset"] :not(:disabled),
+input[type="submit"] :not(:disabled),
+button :not(:disabled) {
+  cursor: pointer;
+}
+
 [role="button"]:-moz-focusring,
 input[type="button"]:-moz-focusring,
 input[type="reset"]:-moz-focusring,
