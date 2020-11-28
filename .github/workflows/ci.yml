@@ -38,7 +38,7 @@ jobs:
 
       - name: 📋  Get Commits since last Release
         if: steps.version.outputs.changed == 'true'
-        use: simbo/changes-since-last-release-action@v1
+        uses: simbo/changes-since-last-release-action@v1
         id: changes
 
       - name: 🎁  Create tag and GitHub Release
