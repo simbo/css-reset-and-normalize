@@ -4,10 +4,13 @@ css-reset-and-normalize
   > A combination of css reset and normalize (available in CSS, SCSS, Stylus and
   > LESS).
 
-[![npm package version](https://img.shields.io/npm/v/css-reset-and-normalize)](https://www.npmjs.com/package/css-reset-and-normalize)
-[![npm](https://img.shields.io/npm/dw/css-reset-and-normalize?color=gold)](https://www.npmjs.com/package/css-reset-and-normalize)
+[![npm Package Version](https://img.shields.io/npm/v/css-reset-and-normalize?)](https://www.npmjs.com/package/css-reset-and-normalize)
+[![npm Downloads](https://img.shields.io/npm/dw/css-reset-and-normalize?color=gold)](https://www.npmjs.com/package/css-reset-and-normalize)
+[![Package Dependencies](https://img.shields.io/david/simbo/css-reset-and-normalize?label=deps)](https://www.npmjs.com/package/css-reset-and-normalize?activeTab=dependencies)
 [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/simbo/css-reset-and-normalize/CI/master)](https://github.com/simbo/css-reset-and-normalize/actions?query=workflow%3ACI)
-[![GitHub last commit](https://img.shields.io/github/last-commit/simbo/css-reset-and-normalize/master)](https://github.com/simbo/css-reset-and-normalize/commits/master)
+[![GitHub last Commit](https://img.shields.io/github/last-commit/simbo/css-reset-and-normalize/master)](https://github.com/simbo/css-reset-and-normalize/commits/master)
+[![GitHub Repo](https://img.shields.io/badge/repo-public-87ceeb)](https://github.com/simbo/css-reset-and-normalize)
+[![License MIT](https://img.shields.io/badge/license-MIT-4cc552)](http://simbo.mit-license.org/)
 
 
 <!-- TOC depthFrom:2 anchorMode:github.com -->
@@ -59,13 +62,13 @@ npm install --save css-reset-and-normalize
 yarn add css-reset-and-normalize
 ```
 
-You can also download or import the latest generated CSS directly:
+You can also use the latest generated CSS directly from a CDN:
 
-  - CSS with comments:  
-    [https://unpkg.com/css-reset-and-normalize/css/reset-and-normalize.css](https://unpkg.com/css-reset-and-normalize/css/reset-and-normalize.css)
+- from *jsdelivr*:  
+  `<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/css-reset-and-normalize/css/reset-and-normalize.min.css">`
 
-  - Minified CSS:  
-    [https://unpkg.com/css-reset-and-normalize/css/reset-and-normalize.min.css](https://unpkg.com/css-reset-and-normalize/css/reset-and-normalize.min.css)
+- from *unpkg*:  
+  `<link rel="stylesheet" href="//unpkg.com/css-reset-and-normalize/css/reset-and-normalize.min.css">`
 
 
 ## Usage
