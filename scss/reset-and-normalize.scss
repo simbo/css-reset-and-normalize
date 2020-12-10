@@ -305,6 +305,13 @@ sup {
   top: -0.5em;
 }
 
+/**
+ * Prevent `em` being affected from global reset
+ */
+em {
+  font-style: italic;
+}
+
 
 /**
  * Remove the border on images inside links in IE 10.
