@@ -6,6 +6,10 @@ a {
   text-decoration: none;
 }
 
-a:-moz-focusring, a:focus {
+a:-moz-focusring {
+  outline: none;
+}
+
+a:focus {
   outline: none;
 }
