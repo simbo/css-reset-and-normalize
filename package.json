@@ -37,7 +37,7 @@
   "devDependencies": {
     "clean-css-cli": "^4.3.0",
     "mkdirp": "^1.0.4",
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.0",
     "rimraf": "^3.0.2",
     "stylus": "^0.54.8"
   }
