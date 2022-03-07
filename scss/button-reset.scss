@@ -17,7 +17,7 @@ button {
   appearance: button;
   user-select: none;
 
-  :not(:disabled) {
+  &:not(:disabled) {
     cursor: pointer;
   }
 
